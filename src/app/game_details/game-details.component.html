@@ -1,0 +1,60 @@
+<div class="game_details">
+  <div class="game_details__breadcrumb">
+    <span (click)="navigateTo('home')">Home > &nbsp;</span>
+    <span (click)="navigateTo('games')"> Games > &nbsp;</span>
+    <span> {{ game?.title }}</span>
+  </div>
+  <div class="game_details__content">
+    <div class="game_details__content__thumbnail">
+      <img [src]="game?.thumbnail" alt="" />
+    </div>
+    <div class="game_details__content__description">
+      <div class="game_details__content__description__title">
+        <h1>{{ game?.title }}</h1>
+      </div>
+      <div class="game_details__content__description__properties">
+        <div
+          class="game_details__content__description__properties__highlightedItems"
+        >
+          <div
+            class="game_details__content__description__properties__highlightedItems__platforms"
+          >
+            <span *ngFor="let platform of platforms">{{ platform }}</span>
+          </div>
+          <div
+            class="game_details__content__description__properties__highlightedItems__users"
+          >
+            <span
+              class="game_details__content__description__properties__highlightedItems__users__label"
+            >
+              <img src="../../assets/icons/user.png" alt="" />
+            </span>
+            <span
+              class="game_details__content__description__properties__highlightedItems__users__value"
+              >{{ game?.users }}</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="game_details__content__description__properties__item"
+          *ngFor="let property of properties | keyvalue"
+        >
+          <span
+            class="game_details__content__description__properties__item__label"
+            >{{ property.key | uppercase }}
+          </span>
+          <span
+            class="game_details__content__description__properties__item__value"
+            >{{ property.value }}</span
+          >
+        </div>
+
+        <div class="game_details__content__description__properties__links">
+          <a [href]="game?.open_giveaway_url">Open giveaway</a>
+          <a [href]="game?.gamerpower_url">Gamerpower</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

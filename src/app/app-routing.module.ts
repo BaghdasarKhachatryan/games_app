@@ -13,7 +13,10 @@ const routes: Routes = [
   },
   {
     path: 'game/:id',
-    loadChildren: () => import('./game/game.module').then((m) => m.GameModule),
+    loadChildren: () =>
+      import('./game_details/game-details.module').then(
+        (m) => m.GameDetailsModule
+      ),
   },
   {
     path: '',

@@ -7,18 +7,18 @@ import { Game } from '../model/game.mode';
   providedIn: 'root',
 })
 export class GamesApiService {
-  private base_url = 'https://www.gamerpower.com/api/giveaways';
+  private base_url = 'https://www.gamerpower.com/api/';
 
   constructor(private http: HttpClient) {}
 
   public getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.base_url);
+    return this.http.get<Game[]>(`${this.base_url}/giveaways`);
   }
 
   public getGameById(id: number): Observable<Game> {
     let params = new HttpParams();
     params = params.append('id', id);
 
-    return this.http.get<Game>(this.base_url, { params });
+    return this.http.get<Game>(`${this.base_url}/giveaway`, { params });
   }
 }

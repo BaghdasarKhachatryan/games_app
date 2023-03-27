@@ -1,1 +1,12 @@
-<p>games-list works!</p>
+<div class="games">
+  <div class="games__header">
+    <h1>Games List</h1>
+  </div>
+  <div class="games__content">
+    <app-game-card
+      [game]="game"
+      (click)="navigateToDetailsPage(game)"
+      *ngFor="let game of game_list$ | async as game_list"
+    ></app-game-card>
+  </div>
+</div>

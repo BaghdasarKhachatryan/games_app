@@ -1,0 +1,143 @@
+@import "responsive";
+@import "colors";
+
+.game_details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 110px;
+
+  @include tablet {
+    padding: 0px 50px 50px;
+  }
+
+  @include mobile {
+    padding: 0 20px 32px;
+  }
+
+  &__breadcrumb {
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin: 0;
+    color: $game_power;
+    padding: 8px 12px;
+
+    @include mobile {
+      font-size: 12px;
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+    &__thumbnail {
+      flex: 40%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__description {
+      flex: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      &__title {
+        font-size: 21px;
+        word-wrap: break-word;
+
+        @include mobile {
+          font-size: 22px;
+          width: 100%;
+        }
+      }
+
+      &__properties {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &__highlightedItems {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 8px;
+
+          &__platforms {
+            display: flex;
+            gap: 15px;
+
+            span {
+              background-color: $platform_blue;
+              color: #fff;
+              border-radius: 4px;
+              padding: 8px 14px 6px;
+              font-size: 16px;
+
+              @include mobile {
+                padding: 3px 11px;
+              }
+            }
+          }
+          &__users {
+            display: flex;
+            font-size: 18px;
+            color: $platform_blue;
+            align-items: center;
+
+            &__label {
+              img {
+                height: 30px;
+                width: 30px;
+              }
+            }
+          }
+        }
+
+        &__item {
+          display: flex;
+          justify-content: space-between;
+
+          &__label {
+            color: $platform_blue;
+            font-weight: 500;
+            font-size: 18px;
+          }
+
+          &__value {
+          }
+        }
+
+        &__links {
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+          color: #ccc;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,9 @@
-<p>game-card works!</p>
+<div class="game">
+  <div class="game__thumbnail">
+    <img [src]="game.thumbnail" [alt]="game.title" />
+  </div>
+  <div class="game__description">
+    <p class="game__description__title">{{ game.title }}</p>
+    <p class="game__description__price">{{ game.worth }}</p>
+  </div>
+</div>
