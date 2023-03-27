@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GameOffer } from '../model/game.mode';
+import { Game } from '../model/game.mode';
 
 @Injectable({
   providedIn: 'root',
@@ -11,14 +11,14 @@ export class GamesApiService {
 
   constructor(private http: HttpClient) {}
 
-  public getGames(): Observable<GameOffer[]> {
-    return this.http.get<GameOffer[]>(this.base_url);
+  public getGames(): Observable<Game[]> {
+    return this.http.get<Game[]>(this.base_url);
   }
 
-  public getGameById(id: number): Observable<GameOffer> {
+  public getGameById(id: number): Observable<Game> {
     let params = new HttpParams();
     params = params.append('id', id);
 
-    return this.http.get<GameOffer>(this.base_url, { params });
+    return this.http.get<Game>(this.base_url, { params });
   }
 }
