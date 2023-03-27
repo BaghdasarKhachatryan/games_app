@@ -1,0 +1,11 @@
+@import "colors";
+
+.home_container {
+  padding: 15px 10px;
+
+  &::ng-deep .mdc-button,
+  .mat-mdc-raised-button:not(:disabled) {
+    background-color: $game_power;
+    color: #fff;
+  }
+}
